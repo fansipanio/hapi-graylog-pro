@@ -1,20 +1,12 @@
-'use strict'
+/* eslint-disable no-console */
 
-const {parse, stringify} = require('flatted');
+const { parse, stringify } = require('flatted');
 const logger = require('gelf-pro');
 const pkg = require('./package');
 
-const defaultLevel = 6;
-const levels = {
-    emergency: 0,
-    alert: 1,
-    critical: 2,
-    error: 3,
-    warning: 4,
-    notice: 5,
-    info: 6,
-    debug: 7
-};
+const DEFAULT_LOG_LEVEL = 6; // info
+
+const getLogLevel = (tag) => (Object.prototype.hasOwnProperty.call(logger.config.levels, tag) ? logger.config.levels[tag] : DEFAULT_LOG_LEVEL);
 
 const sendMessage = (tag, data, extra) => {
     try {
@@ -28,8 +20,6 @@ const sendMessage = (tag, data, extra) => {
         console.error(e);
     }
 };
-
-const getLogLevel = (tag) => levels.hasOwnProperty(tag) ? levels[tag] : defaultLevel;
 
 const register = (server, options) => {
     logger.setConfig(options);
