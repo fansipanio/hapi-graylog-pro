@@ -1,0 +1,29 @@
+{
+  "name": "hapi-graylog-pro",
+  "version": "1.0.0",
+  "description": "Hapi graylog plugin based on gelf-pro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fansipanio/hapi-graylog-pro.git"
+  },
+  "keywords": [
+    "log",
+    "hapi",
+    "graylog",
+    "gelf-pro"
+  ],
+  "author": "Duc Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fansipanio/hapi-graylog-pro/issues"
+  },
+  "homepage": "https://github.com/fansipanio/hapi-graylog-pro#readme",
+  "dependencies": {
+    "flatted": "^3.0.4",
+    "gelf-pro": "^1.3.4"
+  }
+}
